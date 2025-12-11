@@ -7,7 +7,7 @@ import '../../features/home/pages/home_page.dart';
 GoRouter router = GoRouter(
   initialLocation: Routes.home,
   routes: <RouteBase>[
-    GoRoute(path: Routes.home, builder: (context, state) => HomePage(image: '',)),
+    GoRoute(path: Routes.home, builder: (context, state) => HomePage()),
     GoRoute(path: Routes.saved, builder: (context, state) => SavedPage()),
 
   ],

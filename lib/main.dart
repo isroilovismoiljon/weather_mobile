@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'core/dependencies.dart';
-import 'features/home/pages/home_page.dart';
+import 'core/routing/router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,17 @@ class MyApp extends StatelessWidget {
       designSize: Size(393, 852),
       child: MultiProvider(
         providers: dependencies,
-        child: MaterialApp(home: HomePage(image: '',)),
+        child: MaterialApp.router(
+          debugShowCheckedModeBanner: false,
+          routerConfig: router,
+          theme: ThemeData(
+            textTheme: const TextTheme(
+              bodyLarge: TextStyle(color: Colors.white),
+              bodyMedium: TextStyle(color: Colors.white),
+              bodySmall: TextStyle(color: Colors.white),
+            ),
+          ),
+        )
       ),
     );
   }

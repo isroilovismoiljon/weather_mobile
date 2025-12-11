@@ -5,7 +5,7 @@ class ApiClient {
   ApiClient()
     : dio = Dio(
         BaseOptions(
-          baseUrl: "https://www.weatherapi.com/docs/",
+          baseUrl: "https://api.openweathermap.org/data/3.0/onecall",
           // validateStatus: (value) => true,
         ),
       );
