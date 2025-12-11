@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:weadher_app/core/utils/result.dart';
+import 'package:weather_app/core/utils/result.dart';
 
 class ApiClient {
   ApiClient()
