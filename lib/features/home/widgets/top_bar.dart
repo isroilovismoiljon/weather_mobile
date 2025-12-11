@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:weather_app/core/routing/routes.dart';
 
 class TopBar extends StatelessWidget {
   final String location;
@@ -28,7 +30,7 @@ class TopBar extends StatelessWidget {
             ),
           ],
         ),
-        IconButton(onPressed: (){}, icon: Icon(Icons.menu, color: Colors.white, size: 24.r)),
+        IconButton(onPressed: (){context.go(Routes.saved);}, icon: Icon(Icons.menu, color: Colors.white, size: 24.r)),
       ],
     );
   }
