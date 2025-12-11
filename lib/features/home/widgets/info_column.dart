@@ -20,19 +20,19 @@ class InfoColumn extends StatelessWidget {
         Icon(icon, color: Colors.white, size: 30.r),
         SizedBox(height: 5.h),
         Text(
-          value,
+          label,
           style: TextStyle(
             color: Colors.white,
-            fontSize: 16.sp,
-            fontWeight: FontWeight.w600,
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w500,
           ),
         ),
         Text(
-          label,
+          value,
           style: TextStyle(
-            color: Colors.white70,
-            fontSize: 10.sp,
-            fontWeight: FontWeight.w400,
+            color: Colors.white,
+            fontSize: 14.sp,
+            fontWeight: FontWeight.w500,
           ),
         ),
       ],

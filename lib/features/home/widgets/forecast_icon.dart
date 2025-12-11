@@ -7,7 +7,7 @@ class ForecastItem extends StatelessWidget {
   final String day;
   final String temp;
   final String wind;
-  final String condition; // 'sunny' yoki 'cloudy'
+  final String condition;
 
   const ForecastItem({
     super.key,
@@ -21,11 +21,11 @@ class ForecastItem extends StatelessWidget {
     SvgPicture icon;
 
     if (condition == 'sunny') {
-      icon = SvgPicture.asset(AppIcons.sunnyWeather, width: 43.w, height: 33.h,);
+      icon = SvgPicture.asset(AppIcons.sunnyWeather, width: 35.w, height: 35.h,);
     } else if (condition == 'cloudy') {
-      icon = SvgPicture.asset(AppIcons.location, width: 43.w, height: 33.h,);
+      icon = SvgPicture.asset(AppIcons.cloudWeather, width: 35.w, height: 35.h,);
     } else {
-      icon = SvgPicture.asset(AppIcons.location, width: 43.w, height: 33.h,);
+      icon = SvgPicture.asset(AppIcons.snowingWeather, width: 35.w, height: 35.h,);
     }
 
     return icon;
@@ -33,38 +33,32 @@ class ForecastItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 80.w,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10.r),
-      ),
-      child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 10.h),
-        child: Column(
-          children: [
-            Text(
-              day,
-              style: TextStyle(color: Colors.white, fontSize: 13.sp),
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 10.h),
+      child: Column(
+        children: [
+          Text(
+            day,
+            style: TextStyle(color: Colors.white, fontSize: 13.sp),
+          ),
+          SizedBox(height: 5.h),
+          _getWeatherIcon(),
+          SizedBox(height: 5.h),
+          Text(
+            temp,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w400,
             ),
-            SizedBox(height: 5.h),
-            _getWeatherIcon(),
-            SizedBox(height: 5.h),
-            Text(
-              temp,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 16.sp,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            SizedBox(height: 5.h),
-            Text(
-              wind,
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.white70, fontSize: 9.sp),
-            ),
-          ],
-        ),
+          ),
+          SizedBox(height: 5.h),
+          Text(
+            wind,
+            textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.white70, fontSize: 10.sp, height: 1.2.h),
+          ),
+        ],
       ),
     );
   }

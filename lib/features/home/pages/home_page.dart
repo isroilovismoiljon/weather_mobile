@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:weather_app/core/utils/icons.dart';
 import '../widgets/info_column.dart';
 import '../widgets/top_bar.dart';
 import '../widgets/weather_forecast_table.dart';
@@ -41,7 +42,7 @@ class HomePage extends StatelessWidget {
           ),
           SafeArea(
             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              padding: EdgeInsets.only(left: 24.w, right: 24.w, top: 32.h),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -53,6 +54,7 @@ class HomePage extends StatelessWidget {
                     style: TextStyle(color: Colors.white, fontSize: 40.sp, fontWeight: FontWeight.w500),
                   ),
                   Row(
+                    mainAxisAlignment: .center,
                     children: [
                       Text(
                         'Updated as of ',
@@ -65,15 +67,25 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 30.h),
-                  Icon(Icons.wb_sunny, color: Colors.yellow, size: 50.r),
+                  Image.asset("assets/images/sun.png", width: 95.w, height: 95.h,),
                   SizedBox(height: 10.h),
                   Text(
                     'Clear',
                     style: TextStyle(color: Colors.white, fontSize: 48.sp, fontWeight: FontWeight.w700),
                   ),
-                  Text(
-                    '24°C',
-                    style: TextStyle(color: Colors.white, fontSize: 80.sp, fontWeight: FontWeight.w300),
+                  Row(
+                    mainAxisAlignment: .center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        '24',
+                        style: TextStyle(color: Colors.white, fontSize: 86.sp, fontWeight: FontWeight.w500),
+                      ),
+                      Text(
+                        '°C',
+                        style: TextStyle(color: Colors.white, fontSize: 24.sp, fontWeight: FontWeight.w700),
+                      ),
+                    ],
                   ),
                   Spacer(),
                   Padding(

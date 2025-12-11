@@ -28,7 +28,7 @@ class TopBar extends StatelessWidget {
             ),
           ],
         ),
-        Icon(Icons.menu, color: Colors.white, size: 24.r),
+        IconButton(onPressed: (){}, icon: Icon(Icons.menu, color: Colors.white, size: 24.r)),
       ],
     );
   }

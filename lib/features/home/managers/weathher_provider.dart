@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/data/repositories/weather_repository.dart';
-
 import '../../../data/models/weather_response_model.dart';
 
 class WeatherProvider extends ChangeNotifier {
